@@ -31,7 +31,7 @@
 - Python 3.9+
 - FastAPI
 - SQLAlchemy (SQLite)
-- Hyperliquid API
+- Hyperliquid Python SDK（官方 SDK，自动回退到 HTTP 客户端）
 
 ### 前端
 - Vue 3
@@ -45,9 +45,18 @@
 
 ```bash
 cd backend
+
+# 安装依赖
 pip install -r requirements.txt
+
+# 安装 Hyperliquid SDK（推荐）
+pip install git+https://github.com/hyperliquid-dex/hyperliquid-python-sdk.git
+
+# 运行服务
 uvicorn main:app --reload
 ```
+
+**注意**: 如果 SDK 安装失败，系统会自动使用 HTTP 客户端，不影响功能。
 
 后端服务将在 http://localhost:8000 启动
 
@@ -68,6 +77,8 @@ npm run dev
 ```env
 HYPERLIQUID_API_URL=https://api.hyperliquid.xyz
 DATABASE_URL=sqlite:///./copy_trading.db
+# 设置为 true 时，将始终使用模拟数据，不调用真实 API
+USE_MOCK_DATA=false
 ```
 
 ## 数据库

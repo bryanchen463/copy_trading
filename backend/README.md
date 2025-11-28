@@ -29,11 +29,30 @@ USE_MOCK_DATA=false
 - 参考 [Hyperliquid 官方文档](https://hyperliquid.gitbook.io/) 更新 API 调用格式
 - 或者设置 `USE_MOCK_DATA=true` 直接使用模拟数据
 
+## 安装 Hyperliquid SDK
+
+系统已更新为使用 Hyperliquid 官方 SDK。安装方式：
+
+```bash
+# 从 GitHub 安装官方 SDK（推荐）
+pip install git+https://github.com/hyperliquid-dex/hyperliquid-python-sdk.git
+
+# 或者如果已发布到 PyPI
+pip install hyperliquid-python-sdk
+```
+
+**注意**: 如果 SDK 安装失败或不可用，系统会自动回退到 HTTP 客户端，不影响功能。
+
+详细安装说明请参考 [INSTALL_SDK.md](./INSTALL_SDK.md)
+
 ## 运行服务
 
 ```bash
 # 安装依赖
 pip install -r requirements.txt
+
+# 安装 Hyperliquid SDK（如果还未安装）
+pip install git+https://github.com/hyperliquid-dex/hyperliquid-python-sdk.git
 
 # 运行服务
 uvicorn main:app --reload

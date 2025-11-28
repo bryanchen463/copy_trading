@@ -10,4 +10,11 @@ aiosqlite==0.19.0
 alembic==1.12.1
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
+# Hyperliquid SDK - 选择以下之一安装：
+# 方式1: 从 GitHub 安装官方 SDK
+# git+https://github.com/hyperliquid-dex/hyperliquid-python-sdk.git
+# 方式2: 如果已发布到 PyPI
+# hyperliquid-python-sdk
+# 方式3: 使用社区 SDK
+# hyperliquid
 
