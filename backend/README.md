@@ -11,7 +11,23 @@
 ```env
 HYPERLIQUID_API_URL=https://api.hyperliquid.xyz
 DATABASE_URL=sqlite:///./copy_trading.db
+# 设置为 true 时，将始终使用模拟数据，不调用真实 API
+USE_MOCK_DATA=false
 ```
+
+## 关于 Hyperliquid API 422 错误
+
+如果遇到 HTTP 422 错误，可能的原因：
+
+1. **API 格式已更改**: Hyperliquid API 的请求格式可能已更新，需要参考最新文档
+2. **API 端点变更**: 某些端点可能需要不同的请求格式或参数
+3. **认证要求**: 某些 API 可能需要认证或特殊权限
+
+**解决方案**:
+- 系统会自动回退到模拟数据，确保开发可以继续进行
+- 查看日志中的详细错误信息
+- 参考 [Hyperliquid 官方文档](https://hyperliquid.gitbook.io/) 更新 API 调用格式
+- 或者设置 `USE_MOCK_DATA=true` 直接使用模拟数据
 
 ## 运行服务
 
